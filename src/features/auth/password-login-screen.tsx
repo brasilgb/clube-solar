@@ -31,7 +31,7 @@ export function PasswordLoginScreen() {
             <Text className="text-base font-bold text-solar-navy">Sua conta Solar</Text>
             <Text className="text-xs text-solar-muted">CPF: {maskCpf(cpfValue)}</Text>
           </View>
-          <TextAction label="Trocar" onPress={() => router.replace('/')} />
+          <TextAction label="Trocar" onPress={() => router.replace('/login')} />
         </View>
       </AuthCard>
 

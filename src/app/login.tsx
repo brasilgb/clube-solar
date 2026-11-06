@@ -1,5 +1,5 @@
 import { CpfLoginScreen } from '@/features/auth/cpf-login-screen';
 
-export default function Index() {
+export default function Login() {
   return <CpfLoginScreen />;
 }

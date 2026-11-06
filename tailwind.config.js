@@ -16,6 +16,7 @@ module.exports = {
           muted: '#64748B',
           green: '#16A34A',
           red: '#BA1A1A',
+          gold: '#FFC82C',
         },
       },
     },

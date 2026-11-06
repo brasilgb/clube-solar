@@ -13,7 +13,7 @@ export function AuthShell({ step, children }: { step: 1 | 2; children: ReactNode
               <Pressable
                 accessibilityRole="button"
                 accessibilityLabel="Voltar para o CPF"
-                onPress={() => router.replace('/')}
+                onPress={() => router.replace('/login')}
                 className="h-11 w-11 items-center justify-center rounded-full active:bg-solar-pale">
                 <Text className="text-3xl text-solar-navy">‹</Text>
               </Pressable>
