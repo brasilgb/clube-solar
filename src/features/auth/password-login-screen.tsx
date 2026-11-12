@@ -24,6 +24,13 @@ export function PasswordLoginScreen() {
 
       <AuthCard>
         <View className="flex-row items-center gap-3">
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Voltar para o CPF"
+            onPress={() => router.replace('/')}
+            className="h-11 w-11 items-center justify-center rounded-full active:bg-solar-pale">
+            <Text className="text-3xl text-solar-blue">‹</Text>
+          </Pressable>
           <View className="h-14 w-14 items-center justify-center rounded-full bg-solar-blue">
             <Text className="text-2xl font-bold text-white">S</Text>
           </View>
@@ -60,9 +67,8 @@ export function PasswordLoginScreen() {
           </Pressable>
         </View>
         {password.length > 0 && !validPassword && <Text className="text-xs text-solar-red">A senha deve ter de 6 a 12 caracteres.</Text>}
-        <View className="flex-row flex-wrap items-center justify-between gap-x-3">
+        <View className="flex-row items-center justify-start">
           <TextAction label="Esqueci minha senha" onPress={() => setMessage('A recuperação de senha ainda não está disponível.')} />
-          <TextAction label="Código SMS ou WhatsApp" onPress={() => setMessage('O acesso por código ainda não está disponível.')} />
         </View>
         <PrimaryButton
           label="Entrar na minha conta"
@@ -85,17 +91,6 @@ export function PasswordLoginScreen() {
       </Pressable>
       {message ? <StatusMessage message={message} /> : null}
 
-      <AuthCard className="gap-2">
-        <Text className="text-base font-bold text-solar-navy">Precisa de ajuda para entrar?</Text>
-        <Text className="text-xs text-solar-muted">Nossa equipe pode ajudar você a recuperar o acesso.</Text>
-        <View className="flex-row gap-2 pt-1">
-          {['Via WhatsApp', '0800 Solar'].map((channel) => (
-            <Pressable key={channel} accessibilityRole="button" onPress={() => setMessage(`O canal ${channel} ainda não foi configurado.`)} className="h-12 flex-1 items-center justify-center rounded-xl bg-solar-pale active:opacity-70">
-              <Text className="text-xs font-semibold text-solar-blue">{channel}</Text>
-            </Pressable>
-          ))}
-        </View>
-      </AuthCard>
       <TrustFooter />
     </AuthShell>
   );

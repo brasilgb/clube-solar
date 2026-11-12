@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 
-import { AuthCard, AuthShell, PrimaryButton, SectionDivider, StatusMessage, TextAction, TrustFooter } from './components';
+import { AuthCard, AuthShell, PrimaryButton, StatusMessage, TextAction, TrustFooter } from './components';
 import { cpfDigits, formatCpf, isValidCpf } from './cpf';
 
 export function CpfLoginScreen() {
@@ -68,14 +68,6 @@ export function CpfLoginScreen() {
         </View>
       </AuthCard>
 
-      <SectionDivider label="ou acesse com" />
-      <View className="flex-row gap-3">
-        {['Gov.br', 'Google'].map((provider) => (
-          <Pressable key={provider} accessibilityRole="button" onPress={() => setMessage(`O acesso com ${provider} ainda não está disponível.`)} className="h-12 flex-1 items-center justify-center rounded-xl border border-solar-line bg-white active:bg-solar-pale">
-            <Text className="font-semibold text-solar-blue">{provider}</Text>
-          </Pressable>
-        ))}
-      </View>
       {message ? <StatusMessage message={message} /> : null}
       <AuthCard className="gap-2 bg-solar-pale">
         <Text className="text-sm font-semibold text-solar-navy">Seus dados estão protegidos</Text>

@@ -1,14 +1,19 @@
 import type { ReactNode } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { router } from 'expo-router';
+
+const headerLogo = require('@/assets/images/header_lojas_solar_azul_1a9cd9.png');
+// Proporção original da imagem: 2980 x 539
+const HEADER_LOGO_HEIGHT = 36;
+const HEADER_LOGO_WIDTH = (HEADER_LOGO_HEIGHT * 2980) / 539;
 
 export function AuthShell({ step, children }: { step: 1 | 2; children: ReactNode }) {
   return (
     <SafeAreaView className="flex-1 bg-solar-background" edges={['top', 'bottom']}>
-      <View className="border-b border-solar-line bg-solar-background px-4 py-2">
+      <View className="bg-solar-background px-4 py-2">
         <View className="mx-auto w-full max-w-xl flex-row items-center justify-between">
           <View className="flex-row items-center gap-2">
+<<<<<<< HEAD
             {step === 2 && (
               <Pressable
                 accessibilityRole="button"
@@ -22,6 +27,14 @@ export function AuthShell({ step, children }: { step: 1 | 2; children: ReactNode
               <Text className="text-lg font-extrabold tracking-tight text-solar-blue">lojas solar</Text>
               <Text className="-mt-1 text-[10px] font-bold uppercase tracking-widest text-solar-orange">Clube Solar</Text>
             </View>
+=======
+            <Image
+              accessibilityLabel="Lojas Solar Clube Solar"
+              source={headerLogo}
+              style={{ width: HEADER_LOGO_WIDTH, height: HEADER_LOGO_HEIGHT }}
+              resizeMode="contain"
+            />
+>>>>>>> 9abefe3 (Push)
           </View>
           <View className="rounded-full bg-solar-pale px-3 py-1.5">
             <Text className="text-xs font-bold text-solar-blue">Etapa {step} de 2</Text>
